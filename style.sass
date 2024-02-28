@@ -1,0 +1,214 @@
+// ----- ▼ mixin ▼ -----
+//単位換算
+$baseWidth: 750
+@function vw($pixelsVw)
+  @return $pixelsVw / $baseWidth * 100vw
+$spWidth: 750
+@function sp($pixelsVw)
+  @return $pixelsVw / $spWidth * 100vw
+
+$baseFontSize: 16
+@function rem($pixels)
+  @return $pixels / $baseFontSize * 1rem
+
+// %
+@function per($px)
+    @return percentage( ceil(( $px / $baseWidth ) * 100000 ) / 100000 )
+@function perpc($px, $w: 1400 )
+    @return percentage( ceil(( $px / $w ) * 100000 ) / 100000 )
+
+// min()
+@function min($px)
+    $vw: ( ceil(( $px / $baseWidth ) * 100000 ) / 1000 ) *1vw
+    @return unquote("min(#{$vw}, #{$px * 1px})")
+@function minpc($px)
+    $vw: ( ceil(( $px / 1400 ) * 100000 ) / 1000 ) *1vw
+    @return unquote("min(#{$vw}, #{$px * 1px})")
+
+// font-size clamp
+@function clampSize ($num)
+	$minSize: floor(($num * 0.48)) * 1px
+	$maxSize: $num * 1px
+	$size: (ceil(($num / 750) * 100000) / 1000 ) * 1vw
+	@return clamp(#{$minSize}, #{$size}, #{$maxSize})
+
+@function clampPc ($num)
+	$minSize: floor(($num * 0.48)) * 1px
+	$maxSize: $num * 1px
+	$size: (ceil(($num / 1920) * 100000) / 1000 ) * 1vw
+	@return clamp(#{$minSize}, #{$size}, #{$maxSize})
+
+@function wi ($num)
+	@return calc(#{$num} / 1920 * 100% )
+
+
+
+//mediaクエリ
+$pc: 750px // パソコン
+$tb: 900px // タブレット
+$sp: 749px // スマートフォン
+
+@mixin sp
+    @media (max-width: ($pc))
+        @content
+
+/* ----- ▼ base ▼ -----
+html
+    font-size: 16px
+    scroll-behavior: smooth
+body
+    font-family: "Noto Sans JP", Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif
+img
+    max-width: 100%
+    width: 100%
+    height: auto
+    vertical-align: top
+p
+    margin: auto
+
+li
+    list-style: none
+
+
+
+main
+    width: auto
+    overflow: hidden
+    position: relative
+    max-width: 750px
+    margin: auto
+
+
+main::before
+    content: ""
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-image: url(../img/bg.jpg)
+    background-size: cover
+    background-position: center
+    filter: blur(5px)
+    z-index: -1
+    
+
+.anta
+    font-family: "Anta"
+
+h1.title
+    font-size: vw(150)
+    color: #000
+    margin-bottom: vw(40)
+    font-family: "Anta"
+    -webkit-text-stroke: 2px #fff
+    text-stroke: 2px #fff
+h2
+    font-size: vw(60)
+    margin-bottom: vw(20)
+
+section
+    padding: 0 vw(30)
+    margin-bottom: vw(100)
+    p
+        color: #000
+        font-size: vw(40)
+        margin-bottom: vw(40)
+        font-weight: 600
+
+.kv
+    .title
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100lvh
+    h1
+        color: #000
+        font-size: vw(100)
+        -webkit-text-stroke: 2px #000
+        text-stroke: 2px #000
+
+.profile
+    dl
+        display: grid
+        grid-template-columns: auto auto
+        gap: vw(10)
+        margin: 0
+        margin-bottom: vw(50)
+        padding: 0
+    dt
+        font-weight: bold
+    dd
+        margin: 0
+    &__img
+        width: 70%
+        margin: auto
+
+.records
+    p
+        padding-left: 1rem
+
+.sponsor
+    &__01
+        margin-bottom: vw(50)
+
+.movie
+    .youtube
+        margin-bottom: vw(50)
+        position: relative
+        width: 100%
+        aspect-ratio: 16 / 9
+        overflow: hidden
+    iframe
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+    a
+        color: blue
+        &::after
+            display: inline-block
+            content: ""
+            background: url(../img/link.png)
+            background-size: cover
+            background-position: center
+            width: vw(40)
+            height: vw(40)
+            position: relative
+
+.sns
+    .logo
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: space-around
+        margin-bottom: vw(50)
+    a
+        width: 20%
+        padding: 0 vw(10)
+
+
+.campaign
+    margin-top: vw(-100)
+    &_wrap
+        position: relative
+        height: vw(1000)
+    &_01
+        width: vw(1720)
+        position: absolute
+        top: 22%
+        left: 0
+        right: 0
+        margin: auto
+    &_btn
+        position: absolute
+        top: 73%
+        left: 0
+        right: 0
+        margin: auto
+        width: vw(400)
+        font-size: vw(24)
+
+
+

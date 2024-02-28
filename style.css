@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* ----- ▼ base ▼ ----- */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans", YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+p {
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  width: auto;
+  overflow: hidden;
+  position: relative;
+  max-width: 750px;
+  margin: auto;
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: -1;
+}
+
+.anta {
+  font-family: "Anta";
+}
+
+h1.title {
+  font-size: 20vw;
+  color: #000;
+  margin-bottom: 5.33333vw;
+  font-family: "Anta";
+  -webkit-text-stroke: 2px #fff;
+  text-stroke: 2px #fff;
+}
+
+h2 {
+  font-size: 8vw;
+  margin-bottom: 2.66667vw;
+}
+
+section {
+  padding: 0 4vw;
+  margin-bottom: 13.33333vw;
+}
+
+section p {
+  color: #000;
+  font-size: 5.33333vw;
+  margin-bottom: 5.33333vw;
+  font-weight: 600;
+}
+
+.kv .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100lvh;
+}
+
+.kv h1 {
+  color: #000;
+  font-size: 13.33333vw;
+  -webkit-text-stroke: 2px #000;
+  text-stroke: 2px #000;
+}
+
+.profile dl {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 1.33333vw;
+  margin: 0;
+  margin-bottom: 6.66667vw;
+  padding: 0;
+}
+
+.profile dt {
+  font-weight: bold;
+}
+
+.profile dd {
+  margin: 0;
+}
+
+.profile__img {
+  width: 70%;
+  margin: auto;
+}
+
+.records p {
+  padding-left: 1rem;
+}
+
+.sponsor__01 {
+  margin-bottom: 6.66667vw;
+}
+
+.movie .youtube {
+  margin-bottom: 6.66667vw;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.movie iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.movie a {
+  color: blue;
+}
+
+.movie a::after {
+  display: inline-block;
+  content: "";
+  background: url(../img/link.png);
+  background-size: cover;
+  background-position: center;
+  width: 5.33333vw;
+  height: 5.33333vw;
+  position: relative;
+}
+
+.sns .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 6.66667vw;
+}
+
+.sns a {
+  width: 20%;
+  padding: 0 1.33333vw;
+}
+
+.campaign {
+  margin-top: -13.33333vw;
+}
+
+.campaign_wrap {
+  position: relative;
+  height: 133.33333vw;
+}
+
+.campaign_01 {
+  width: 229.33333vw;
+  position: absolute;
+  top: 22%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.campaign_btn {
+  position: absolute;
+  top: 73%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 53.33333vw;
+  font-size: 3.2vw;
+}
+/*# sourceMappingURL=style.css.map */
